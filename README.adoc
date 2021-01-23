@@ -4,6 +4,7 @@
 simple example for create lips video from text
 
 ## Create mp3 from text
+needs a aws account with polly permisions, select correct voiceId (Hans ist german male)
 ```
 python createMp3.py --voice Hans --input test.txt --out test.mp3
 ```
@@ -25,7 +26,7 @@ python createSequence.py --imageset comic --input test.json --output sequence.tx
 ffmpeg -y -f concat -i sequence.txt -vf fps=25 test.avi
 ```
 
-## Concat video and audio`
+## Concat video and audio
 ```
 ffmpeg -y -i test.avi -i test.wav test_final.avi 
 ```
