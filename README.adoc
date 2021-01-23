@@ -1,0 +1,28 @@
+
+# Create mp3 from text
+```
+python createMp3.py --voice Hans --input test.txt --out test.mp3
+```
+
+# Convert mp3 to wav
+```
+ffmpeg -i test.mp3 -acodec pcm_u8 -ar 22050 test.wav
+```
+# Generates lip sync information 
+```
+/root/rhubarb-lip-sync-1.10.0-linux/rhubarb --recognizer phonetic -f json -o test.json test.wav
+```
+
+# Create SequenceList
+```
+python createSequence.py --imageset comic --input test.json --output sequence.txt
+```
+# Create Video
+```
+ffmpeg -y -f concat -i sequence.txt -vf fps=25 test.avi
+```
+
+# Concat video and audio`
+```
+ffmpeg -y -i test.avi -i test.wav test_final.avi 
+```
