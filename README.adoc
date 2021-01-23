@@ -4,7 +4,7 @@
 simple example for create lips video from text
 
 ## Create mp3 from text
-needs a aws account with polly permisions, select correct voiceId (Hans ist german male)
+an aws account is required with polly permisions, select correct voiceId (Hans ist german male)
 ```
 python createMp3.py --voice Hans --input test.txt --out test.mp3
 ```
